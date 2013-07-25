@@ -3,14 +3,15 @@ Casot
 
 Small android database. Thread-safety. Simplicity. Hidden-slowness.
 
-TODO
+Initial objective:
 
     Casot.context(AppContext)
         .path(String)
-        .memory(limit)
+        .log(boolean)
         .init();
         
     Casot.db(Clazz.class[, id, version])
+    	.inMemory(limit)
         .add(Clazz)
         .remove(id)
         .remove(Clazz)
@@ -26,6 +27,8 @@ TODO
         .destroy()
         .done(Casot.DoneListener)
         .commit();
+        
+        .info();
         
     class Clazz implements Marshalable { }
     

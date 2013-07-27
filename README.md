@@ -5,10 +5,9 @@ Small android database. Thread-safety. Simplicity. Hidden-slowness.
 
 Initial objective:
 
-    Casot.context(AppContext)
-        .path(String)
+    Casot.path(String)
         .log(boolean)
-        .init();
+        .init(AppContext);
         
     Casot.db(Clazz.class[, id, version])
     	.inMemory(limit)
@@ -33,7 +32,6 @@ Initial objective:
     class Clazz implements Marshalable { }
     
     public interface Marshalable {
-        JSONObject murshal(Marshalable marshalable);
-        Marshalable unmarshal(JSONObject json);
+        JSONObject marshal();
+        void unmarshal(JSONObject json);
     }
-  
